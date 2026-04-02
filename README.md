@@ -77,7 +77,7 @@ Throughout this journey, a wide array of industry-standard tools are encountered
 
 | Category | Tools |
 |---|---|
-| **Reconnaissance** | Nmap, Gobuster, Dirb, FFuF, theHarvester, Shodan |
+| **Reconnaissance** | Nmap, Gobuster, Dirb, ffuf, theHarvester, Shodan |
 | **Web Exploitation** | Burp Suite, SQLMap, Nikto, WPScan, OWASP ZAP |
 | **Password Attacks** | Hydra, John the Ripper, Hashcat, CrackMapExec |
 | **Exploitation** | Metasploit Framework, ExploitDB, manual CVE exploitation |

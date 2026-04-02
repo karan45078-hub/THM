@@ -18,4 +18,9 @@ and with it you can easliy identify.
 After identifing the hash type you can decode the the decoding technique that corresponds to that encoding technique.
 Search online for term  "<The encoding type you discoverd> encoding decoder"
 or easily go to https://crackstation.net/ and there paste the keyword and you go the meaning of that string <c4ca4238a0b923820dcc509a6f75849b> and 
-af...
+after Decoding all the strings you can connect the clues between each endpoints 
+and since in room description it is simply written that it is IDOR VULNs. and also written that This could help you uncover website locations you were not expected to access.
+so guess the endpoint and do hit and trial and you will got the flag if you hit the correct endpoint.
+Then flag will be in front of you. 
+Kudos to the Room Maker!!
+

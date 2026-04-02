@@ -1,5 +1,5 @@
 So My attempt is to whenever i got the ip i always hit the ip in browser after all basic stuffs that i already metioned in Instruction.txt file.
-so i opened http://<IP>
+so i opened http://ip
 and so a corridor.
 ![Insert_Image1](./Insert_image1.png)
 There were total 13 doors in the corridors all were clickable and after clicking at each door they land me at different endpoints.
@@ -7,7 +7,7 @@ All endpoint visually looks similar to the below picture
 ![insert_image2](./Insert_image2.png)
 moment of truth when you analyse those paths 
 those paths are like below
-http://<ip>/c4ca4238a0b923820dcc509a6f75849b
+http://ip/c4ca4238a0b923820dcc509a6f75849b
 all were like this
 you can view all via the source code
 ![insert_image3](./Insert_image3.png)

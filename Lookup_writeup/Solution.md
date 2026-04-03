@@ -3,6 +3,7 @@ So My attempt is to whenever I get the IP I always hit the IP in the browser aft
 But doing so leads a redirect to http://lookup.thm.
 
 So we need to do a small tweak in the file */etc/hosts*
+
 Then where you entered the ip at the end of that ip put a single space then lookup.thm and save & exit.That's It.
 
 Then i opened http://ip and it redirected me to http://lookup.thm then i saw a login page.
@@ -192,8 +193,10 @@ If we are lucky enough that the binary is executing the command id without using
 To do This we will make a file at the location  /tmp with filename id
 To do so we need to first exit from shell and go the meterpreter session since meterpreter session doesn't have a option to create file.
 So The current directory in which we opnened the msfconsole. we will create the id file there. the content within id files will be
+
 #!/bin/bash
 echo "uid=1001(think) gid=1001(think) groups=1001(think)"
+
 then we save it on our local disk and upload it with the meterpreter command **upload id**
 
 <Make_script>
@@ -201,6 +204,7 @@ then we save it on our local disk and upload it with the meterpreter command **u
 Since Chmod is supported by meterpreter we will gave this id file executable permission.
 Now make sure you are inside the tmp directory. Cuz we are going to executing a command that will add the current directory to the varible $PATH.
 if you followed by steps and switched from meterpreter to shell i am pretty sure you are at the directory /var/www/files.lookup.thm/public_html/elFinder/php. switch to /tmp
+
 The command is **PATH=/tmp:$PATH**
 To make sure your Your path command succeed or not. Run echo $PATH if you get /tmp: at the beginning of the line your command is successfully executed.
 
@@ -233,5 +237,7 @@ Using this method, we can successfully read the private SSH key of the root user
 <key_>
 
 After getting the key save the key as filename key and gave him chmod 600 permission by the command **chmod 600 key**
+
 Now login as root by the command ssh -i <filename of key> root@<ip>
+
 Now enumurate there and you will get the root flag too.

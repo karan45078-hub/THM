@@ -193,3 +193,25 @@ To make sure your Your path command succeed or not. Run echo $PATH if you get /t
 Now Run that *SUID binary*
 You should get a wordlist copy and save the wordlist for bruteforcing.
 If you don't got the wordlist repeat the steps.
+
+Now we are going to bruteforce the user think with the wordlist by the command 
+```
+ hydra -l think -P /path/to/wordlist  -t 4 ssh://room_ip
+```
+After running you will get the ssh pass login using the ssh pass
+<ssh_login>
+Do enumuration there and you will got user flag.
+
+# SUDO privilage - Part-3
+
+Checking the sudo privileges for the think user by the command *sudo -l*, we can see that we are able to run the look binary as root.
+<look_binary>
+The look binary is similar to grep in that its primary purpose is to search for lines in a file that begin with a specified string. If it finds any lines that start with the given string, it prints them.
+
+We can leverage this behavior to read arbitrary files by specifying an empty string as the search term. Since every line begins with an empty string, all lines in the file will match, causing the entire file to be printed. This technique is also documented on GTFOBins.
+
+Using this method, we can successfully read the private SSH key of the root user as follows:
+<key_>
+After getting the key save the key as filename key and gave him chmod 600 permission by the command **chmod 600 key**
+Now login as root by the command ssh -i <filename of key> root@<ip>
+Now enumurate there and you will get the root flag too.

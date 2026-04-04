@@ -38,7 +38,9 @@ When hitting to the 2nd endpoint it gave us the famous open source software CMS 
 
 <cms_version>
 
-We can see the version is 2.2.8.
+We can see the version is 2.2.8.as well as we will now have a application.
+
+The question asked next is What's the CVE you're using against the application?
 
 We will now search if there is any exploit is available for this version or not
 
@@ -50,7 +52,16 @@ searchsploit -c cms 2.2.8
 
 <searchsploit_res>
 
-We can see clearly that this is vulneable to sqli.
+We can see clearly that this is vulneable to sqli. and finally we found a vulnerblity but we need a cve of this this search result gave you a path at right plane.
+
+Now to know more about that exploit. We need another commad to know more about that exploit with the help of its path. Make sure to copy that path that you saw in right plane.
+
+We will run below command to know *CVE*
+```
+searchsploit -x <path>
+```
+
+
 
 We will use it with msfconsole. I immediately started msfconsole and serch by the command **seach cms 2.2.8**. 
 

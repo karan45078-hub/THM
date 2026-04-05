@@ -1,6 +1,8 @@
 🏷️ *Room Name =* **Neighbour**
 
-📝 *Room Description =* **Check out our new cloud service, Authentication Anywhere. Can you find other user's secrets?
+📝 *Room Description =* 
+
+Check out our new cloud service, Authentication Anywhere. Can you find other user's secrets?
 
 Check out our new cloud service, Authentication Anywhere -- log in from anywhere you would like! Users can enter their username and password, for a totally secure login process! You definitely wouldn't be able to find any secrets that other people have in their profile, right?
 
@@ -16,7 +18,6 @@ Check out similar content on TryHackMe:
 
 IDOR
 
-**
 
 ❓ *Room Questions =*
 

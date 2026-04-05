@@ -32,3 +32,10 @@ And Thats it now your local machine is connected to the room.
 
 Point to notice: Now your local machine is connecting the room via  a different network interface that is tun0 and with another ip too. as well as room is only able to connect you via the ip listed under the interface tun0
 You can see all ip related info by the command "ip a"
+
+Shortcut: Intead of getting the ip each time you open a room and adding them to /etc/hosts is clumsly. 
+
+You could do this 
+```bash
+echo 10.49.{1..254}.{1..254} | sed 's/ /\n/g' >> /tmp/a.txt && echo 10.48.{1..254}.{1..254} | sed 's/ /\n/g' >> /tmp/a.txt && sudo bash -c 'cat /tmp/a.txt >> /etc/hosts'.
+```

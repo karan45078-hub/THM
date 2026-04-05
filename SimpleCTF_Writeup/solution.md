@@ -102,7 +102,7 @@ We can try to dehash the password with hashcat.
 
 We are going to use: -
 ```
-hashcat -O -a 0 -m 10 0c01f4468bd75d7a84c7eb73846e8d96:1dac0d92e9fa6bb2 /usr/share/wordlists/rockyou.txt
+
 ```
 The structure of command is hashcat [options] [options_values] [hash(es):salt] [wordlist/mask]
 
@@ -149,4 +149,49 @@ Command explanation:
 
 hashcat can also be that it doesn't run on low aspects devices or gives errors.
 
-To dehash we can also use online methods too
+To dehash we can also use online methods too.
+
+The url that does our task is *https://hashes.com/en/decrypt/hash*.
+
+Enter the password hash and salt in the format = password_hash+salt.
+
+After doing it we well get a Password.
+
+Now submit this password to question 5 and you're done with Q5.
+
+For question 6 it is asking me where i can login using the credential above. The answer will be of 3 letters. So ssh keyword quickly clicked into my mind.
+
+And for the next part we will login with ssh for the user whose password we have craked now is mitch.
+
+```
+ssh mitch@<room_ip> -p 2222
+```
+
+<ssh_login>
+
+This ssh session also contains our user flag that of Q7.and also  The answer of Q8.
+
+
+Privilage Escalation Part
+
+Now into our ssh session we will check what permission we have by 
+
+```
+sudo -l
+```
+
+<perm_img>
+
+We can See that the current user mitch can run the program vim as root.
+
+For question 9 it is asking what i am going as a leverage to get the root access. The answer is the current program that we are able to root against the user mitch.
+
+After entering info the vim by the command **sudo vim**. We will type **:!bash** to get a shell.
+
+Since we are able to run the vim as root(sudo). The shell we are spawning with :!bash is a root shell
+
+<shell_img>
+
+After this command we will get the root user you can verify with *whoami*.
+
+Poke around you will also the root flag that is the answer of last Q10.

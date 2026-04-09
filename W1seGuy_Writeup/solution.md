@@ -168,6 +168,4 @@ So the magic is that it can be reverserd to get the key
 ```
 Encoded text + text_to_encode =(encoding with xor)= key
 ```
-
-
-
+just a update

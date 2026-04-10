@@ -200,7 +200,7 @@ Decrypt:
 Cipher:      C1  C2  C3  C4  C5
 Key:         K   E   Y   K   E
              ↓   ↓   ↓   ↓   ↓
-XOR →        H   E   L   L   O
+Plaintext →  H   E   L   L   O
 
 To get the key:
 Cipher:      C1  C2  C3  C4  C5
@@ -221,3 +221,22 @@ As we can see in *Decrypt Section* that
   2. Key    (Nothing Known)
 
 We are going to chain both section to get the key.
+
+Small Note: In any hex encoded text 2 char = 1 byte = 1 orginal ASCII char.
+Our encoded text is also further encoded into hex encoding.
+
+See in *To get the key* section. We know the plaintext partially.
+So we will do only partial xoring only with partial known plaintext.
+Partial Known PlainText = "THM{"(Since Every THM flag starts with "THM{")
+
+Now We know each char of encoded text if xored with each char of Plaintext We will get some partial key too.
+
+Since 2 char of encoded text(already hex encoded) = 1 char of original xor encoded char.
+so if 1 xored char again xored  with 1 char of plaintext = 1st char of key
+Similarly.
+ if 2nd xored char again xored  with 2nd char of plaintext = 2nd char of key
+ if 3rd xored char again xored  with 3rd char of plaintext = 3rd char of key
+ if 4th xored char again xored  with 4th char of plaintext = 4th char of key
+And Thats It we will have only 4 char of plaintext.
+
+We will first extract 4 char of key.

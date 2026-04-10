@@ -183,3 +183,41 @@ The PlainText
 Here, PlainText Byte != Encoded Text Byte.
 
 That Means Our assumed PlainText is incorrect.
+
+As We can see in the downloaded file that the encoded text is encoded from flag 1 and after submitting the key we will get the flag2.
+
+Now here Our first objective will be to get the key.
+
+Remember the Earlier logic of XOR
+
+```bash
+Plaintext:   H   E   L   L   O
+Key:         K   E   Y   K   E
+             ↓   ↓   ↓   ↓   ↓
+XOR →        C1  C2  C3  C4  C5   (cipher)
+
+Decrypt:
+Cipher:      C1  C2  C3  C4  C5
+Key:         K   E   Y   K   E
+             ↓   ↓   ↓   ↓   ↓
+XOR →        H   E   L   L   O
+
+To get the key:
+Cipher:      C1  C2  C3  C4  C5
+Plaintext:   H   E   L   L   O
+             ↓   ↓   ↓   ↓   ↓
+Key →        K   E   Y   K   E
+
+
+```
+As we can see in *To get the key section* that 
+ What we have known is
+ 1. Cipher (Whole Cipher Known.)
+ 2. Plaintext(Since Plaintext is flag1 and tryhackme flag often starts with THM{ )
+
+As we can see in *Decrypt Section* that
+ What we have known is
+  1. Cipher (Whole Cipher Known.)
+  2. Key    (Nothing Known)
+
+We are going to chain both section to get the key.

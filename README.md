@@ -44,7 +44,7 @@ This writeup journey begins at the very foundation — understanding networking,
 
 ## 📁 Repository Structure
 
-As writeups are added, the repository will be organised into themed folders mirroring the TryHackMe learning paths and standalone room categories:
+As writeups are added, the repository will be organized into themed folders mirroring the TryHackMe learning paths and standalone room categories:
 
 ```
 THM/

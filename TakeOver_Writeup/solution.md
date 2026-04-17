@@ -140,4 +140,11 @@ But adding the support.futurevera.thm is not enought you will still get the abov
 
 Note: Make sure to add support.futurevera.thm in the /etc/hosts file just beside the futurevera.thm
 
+But still after doing so i got the error
+
+<support_img>
+
+You can see the error clearly "ERR_SSL_KEY_USAGE_INCOMPATIBLE"
+
+After it when i tried the url with http instead of https i got redirected to https://futurevera.thm
 

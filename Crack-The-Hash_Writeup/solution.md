@@ -76,3 +76,33 @@ So now we will seach for online bcrypt online decoder.
 But as per my search i cant find any online tool for it.
 
 Then i did chatgpt and it told me to visit hashses.com and there i hit that hash and got the answer *bleh*
+
+
+Now Lets go to our fourth hash *279412f945939ba78ce0758d3fd83daa*
+
+Its hint already says that it is md4 so we can enter it in the same website hashes.com. 
+
+After doing the same it gave me the result *Eternity22*
+
+Now lets goto our sixth hash *F09EDCB1FCEFC6DFB23DC3505A882655FF77375ED8AA2D1C13F640FCCC2D0C85*
+
+Since we dont know the hash and it has also no hint we will first find what it is.
+
+```
+  The key clue is length.
+
+  This hash is 64 hexadecimal characters
+  Each hex character = 4 bits → 64 × 4 = 256 bits
+
+That  matches SHA-256, which produces 256-bit hashes (64 hex chars).
+```
+
+For its decoding too we can refer to hashes.com and that will gave us the decoded result *paule*
+
+For the fifth hash *1DFECA0C002AE40B8619ECF94819CC1B*
+
+We already have the hint available that its a NTLM. and we can do it with the same website hashes.com
+
+And this will gives us the decoded hash *n63umy8lkf4i*
+
+Now  lets goto out

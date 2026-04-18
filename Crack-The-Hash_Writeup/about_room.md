@@ -1,15 +1,16 @@
-🏷️ *Room Name =* **Hidden Deep into my Heart**
+🏷️ *Room Name =* **Crack The Hash**
 
 📝 *Room Description =* 
 
-Find what's hidden deep inside this website.
+Cracking hashes challenges
 
-My Dearest Hacker,
-Cupid's Vault was designed to protect secrets meant to stay hidden forever. Unfortunately, Cupid underestimated how determined attackers can be.
+Level 1: Can you complete the level 1 tasks by cracking the hashes?
 
-Intelligence indicates that Cupid may have unintentionally left vulnerabilities in the system. With the holiday deadline approaching, you've been tasked with uncovering what's hidden inside the vault before it's too late.
+Level 2: This task increases the difficulty. All of the answers will be in the classic rock you(opens in new tab) password list.
 
-You can find the web application here: http://MACHINE_IP:5000
+You might have to start using hashcat here and not online tools. It might also be handy to look at some example hashes on hashcats page(opens in new tab).
+
+
 
 ❓ *Room Questions =*
 

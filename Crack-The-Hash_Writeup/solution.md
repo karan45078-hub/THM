@@ -48,8 +48,7 @@ Now lets goto out third hash that is *$2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJk
 And its hint says 
 
 ```
-Search the hashcat examples page (https://hashcat.net/wiki/doku.php?id=example_hashes) for 
-2
-y
-. This type of hash can take a very long time to crack, so either filter rockyou for four character words, or use a mask for four lower case alphabetical characters.
+Search the hashcat examples page (https://hashcat.net/wiki/doku.php?id=example_hashes) for $2y$. This type of hash can take a very long time to crack, so either filter rockyou for four character words, or use a mask for four lower case alphabetical characters.
 ```
+
+The hint is saying to analyse the hash from that specific url but we gonna use the chatgpt for analysign that hash.

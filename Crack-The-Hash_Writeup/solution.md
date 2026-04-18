@@ -24,3 +24,32 @@ That matches SHA-1, which produces 160-bit hashes (40 hex chars).
 Now i seached onlinne for sha1 decoder and feed it the sha 1 hash *CBFDAC6008F9CAB4083784CBD1874F76618D2A97*
 
 This gave me the decoded result *password123*
+
+
+Now lets go onto the 3rd hash its hint says *Sha..*
+
+But it is similar like the above one so we need to ananlyse the hash again *1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032*
+
+```
+ The key clue is length.
+
+ This hash is 64 hexadecimal characters
+ Each hex character = 4 bits → 64 × 4 = 256 bits
+
+ That  matches SHA-256, which produces 256-bit hashes (64 hex chars).
+```
+
+Again we will seach onlien for sha 256 decoder and decode it online.
+
+The decoded result was *letmein*
+
+Now lets goto out third hash that is *$2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom*
+
+And its hint says 
+
+```
+Search the hashcat examples page (https://hashcat.net/wiki/doku.php?id=example_hashes) for 
+2
+y
+. This type of hash can take a very long time to crack, so either filter rockyou for four character words, or use a mask for four lower case alphabetical characters.
+```

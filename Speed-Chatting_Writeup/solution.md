@@ -65,3 +65,10 @@ Now we will hold our step back and try to attack back.
 Now first of all before jumping straight into the reverse shell lets see its reacts to the payload we uplaod or not. if it reacts it can be feed with a rev shell.
 
 
+So first we will see that it is making a impact or not by opening a python server with the command
+
+```
+python -m http.server 5555
+```
+
+And i

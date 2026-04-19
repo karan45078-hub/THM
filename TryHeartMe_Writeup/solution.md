@@ -42,7 +42,7 @@ As mentioned on the room page, the machine is accessible at:
 http://10.49.181.116:5000
 ```
 
-Navigating to this address, we are greeted with the application's homepage:
+Navigating to this address, we are greeted with the room's homepage:
 
 ![homepage_look](homepage_look.png)
 

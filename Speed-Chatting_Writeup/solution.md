@@ -148,3 +148,5 @@ p=subprocess.call(["/bin/bash","-i"]);
 
 ```
 still didn't worked
+
+There is something  interesting i found that whenever i  uploads a php file and opens up the uploadded php files in a new tab it downloads the file instead of oopening it into a new tab.

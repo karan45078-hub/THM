@@ -177,4 +177,44 @@ There upload the audio file and you will see the wave form of the audio.
 
 But change that wave form to spectrogram form to see the flag.
 
-![audio][audio.png]
+![audio](audio.png)
+
+Lets get onto our 12th question it says to decode the jpg file.
+
+we will have to analyse the details of file.
+
+```
+Steghide is a command-line tool used for steganography—hiding data inside files like images (JPEG, BMP) or audio (WAV). It doesn’t just append data; it embeds it in a way that tries to be invisible.
+```
+
+just enter the commadn 
+
+``` steghide extract -sf file.jpg ```
+
+and when asked to enter passphrase press enter and then password will be saved in txt file in the current folder.
+
+lets get onto our 13th quesiton it says 
+
+```
+Download and get 'inside' the file. What is the first filename & extension?   Hint is Obscure Steg.
+```
+
+We will now scan for embedded files with the command
+
+```
+binwalk -e meme_1559010886025.jpg
+```
+
+Then there will be a folder with the name of that file and inside that folder there will be the firstname and file extention of the image will be.
+
+lets get onto our 14th question it asks 
+
+```
+Get inside the archive and inspect the file carefully. Find the hidden text.  hint is Answer is case sensitive.
+
+```
+
+
+After a lot of attemps when we did xxd then one of the rar file inside the extracted folder that has the flag hidden somewhere inside the tail part..
+
+that all it was in this way the last one solves and the room colmpletes.

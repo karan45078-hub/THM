@@ -150,3 +150,11 @@ Gyles
 
 ```
 Now it's sure that dev.team.thm is made by gyles.
+
+When entering into the /home/dale
+
+we saw a line 
+
+```
+sudo -u gyles /home/gyles/admin_checks
+```

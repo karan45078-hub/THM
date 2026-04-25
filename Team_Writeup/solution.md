@@ -240,4 +240,54 @@ cat /root/root.txt
 ```
 as root.
 
-if we could edit the file script.sh
+if we could edit the file script.sh. But.....
+
+👉 Being in the group isn’t enough by itself.
+You also need write permission on the file, not just the directory.
+
+Now if we see inside the file script.sh it is also executing 2 files as root and lets see we can control those 2 files or not 
+
+
+Meaning we could edit those 2 files or not.
+
+those 2 files are 
+
+```text
+/usr/local/sbin/dev_backup.sh
+/usr/local/bin/main_backup.sh
+```
+
+Now too see it permission whether we could do anything with it or not
+
+cheking the main_backup.sh gave us
+
+```
+-rwxrwxr-x 1 root admin 84 Apr 25 17:07 /usr/local/bin/main_backup.sh
+```
+
+Meaning i am part of group admin too as gyles so i could edit the file main_backup.sh so i attact this line to the file 
+
+```bash
+echo "id > /tmp/proof.txt" >> /usr/local/bin/main_backup.sh
+```
+now at the bootom of the ifle main_backup.sh the comman id > /tmp/proof.txt is attached
+
+
+menaing if that file script.sh is actually in cron job and running as root each minute
+
+ menaing the id commond will be run a root after a minute adding the line.
+
+After a min when i checked /tmp/proof.txt
+
+```bash
+uid=0(root) gid=0(root) groups=0(root),108(lxd),1004(admin)
+```
+Meaning it is surely running as root.
+
+now i put 
+
+```bash
+ echo "cat /root/root.txt > /tmp/proof.txt" >> /usr/local/bin/main_backup.sh
+```
+
+And since cron job is running each min when i checked for the file after the min i got the content of root.txt and in this way root.txt solves.

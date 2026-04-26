@@ -55,7 +55,108 @@ There is this page and this page alone give me many page.
 
 here are the endpoints that i found from that page
 
-```http
-1.http://olympus.thm/~webmaster/index.php
-2.
+
+- http://olympus.thm/~webmaster/index.php
+- http://olympus.thm/~webmaster/post.php?post=1 > not found
+- http://olympus.thm/~webmaster/post.php?post=2 > not found
+- http://olympus.thm/~webmaster/post.php?post=3 > not found
+- http://olympus.thm/~webmaster/post.php?post=6 > not found
+- http://olympus.thm/~webmaster/category.php?cat_id=1 > a page
+- http://olympus.thm/~webmaster/category.php?cat_id=2 > a page
+- http://olympus.thm/~webmaster/category.php?cat_id=3 > a page
+- http://olympus.thm/~webmaster/category.php?cat_id=7 > a page
+- http://olympus.thm/~webmaster/category.php?cat_id=1 > a page
+
+And from above link in any page there was not a single newpage.
+
+There is 2 more page under the same endpoint
+
+- http://olympus.thm/~webmaster/admin > got redirected
+- http://olympus.thm/~webmaster/register.php > not found
+
+viewing source code of it gave us few more links
+
+Here are the links inside it
+
+- http://olympus.thm/~webmaster/admin/js/tinymce/tinymce.min.js
+- http://olympus.thm/~webmaster/admin/js/tinymce/script.js
+- http://olympus.thm/~webmaster/img/vimeo.png
+- https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+- http://olympus.thm/~webmaster/css/cms-home.css
+- http://olympus.thm/~webmaster/css/material-icons.css
+- http://olympus.thm/~webmaster/admin/font-awesome/css/font-awesome.min.css
+- http://olympus.thm/~webmaster/index.php
+- http://olympus.thm/~webmaster/admin
+- http://olympus.thm/~webmaster/register.php
+- http://olympus.thm/~webmaster/post.php?post=2
+- http://olympus.thm/~webmaster/#
+- http://olympus.thm/~webmaster/img/img.jpg
+- http://olympus.thm/~webmaster/post.php?post=3
+- http://olympus.thm/~webmaster/img/61X1U2-xUTL.jpg
+- http://olympus.thm/~webmaster/post.php?post=6
+- http://olympus.thm/~webmaster/img/
+- http://olympus.thm/~webmaster/category.php?cat_id=1
+- http://olympus.thm/~webmaster/category.php?cat_id=2
+- http://olympus.thm/~webmaster/category.php?cat_id=3
+- http://olympus.thm/~webmaster/category.php?cat_id=7
+- http://olympus.thm/~webmaster/category.php?cat_id=8
+- http://olympus.thm/~webmaster/js/jquery.js
+- http://olympus.thm/~webmaster/js/bootstrap.min.js
+
+since going to /admin was not possible but from source code i was able to find something inside the admin endpoint.
+
+So when i modified the link to 
+
+__ http://olympus.thm/~webmaster/admin/js/ __
+
+i got a lot of pages
+
+- http://olympus.thm/~webmaster/admin/js/bootstrap.js
+- http://olympus.thm/~webmaster/admin/js/bootstrap.min.js
+- http://olympus.thm/~webmaster/admin/js/jquery-1.9.1.min.js
+- http://olympus.thm/~webmaster/admin/js/jquery.js
+- http://olympus.thm/~webmaster/admin/js/npm.js
+- http://olympus.thm/~webmaster/admin/js/plugins/
+- http://olympus.thm/~webmaster/admin/js/tinymce/
+
+The content of inside 
+
+__http://olympus.thm/~webmaster/admin/js/plugins/ __
+
+- http://olympus.thm/~webmaster/admin/js/plugins/excanvas.min.js
+- http://olympus.thm/~webmaster/admin/js/plugins/flot-data.js
+- http://olympus.thm/~webmaster/admin/js/plugins/jquery.flot.js
+- http://olympus.thm/~webmaster/admin/js/plugins/jquery.flot.pie.js
+- http://olympus.thm/~webmaster/admin/js/plugins/jquery.flot.resize.js
+- http://olympus.thm/~webmaster/admin/js/plugins/jquery.flot.tooltip.min.js
+
+the content inside are
+
+__ http://olympus.thm/~webmaster/admin/js/tinymce/__
+
+- http://olympus.thm/~webmaster/admin/js/tinymce/morris-data.js
+- http://olympus.thm/~webmaster/admin/js/tinymce/morris.js
+- http://olympus.thm/~webmaster/admin/js/tinymce/morris.min.js
+- http://olympus.thm/~webmaster/admin/js/tinymce/raphael.min.js
+
+So there were all inside admin/js
+
+Lets get onto now admin/font-awesome/
+
+- http://olympus.thm/~webmaster/admin/font-awesome/HELP-US-OUT.txt
+- http://olympus.thm/~webmaster/admin/font-awesome/fonts/
+- http://olympus.thm/~webmaster/admin/font-awesome/scss/
+
+now there are not much more interesting files under fonts and scss but since i though HELP-US-OUT.txt is useful and i saw its content was
+
+```text
+I hope you love Font Awesome. If you've found it useful, please do me a favor and check out my latest project,
+Fort Awesome (https://fortawesome.com). It makes it easy to put the perfect icons on your website. Choose from our awesome,
+comprehensive icon sets or copy and paste your own.
+
+Please. Check it out.
+
+-Dave Gandy
 ```
+
+But i think its a advertisement.

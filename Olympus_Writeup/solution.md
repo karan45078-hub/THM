@@ -194,3 +194,28 @@ the req get captured and without modifying anything into i set do intercept the 
 THen when i response was intercept the admin page was visible 
 
 ![admin](admin.png)
+
+Meaninng we have access to now admin.png source code too. 
+
+with the same method i was able to find source code of many pages too.
+
+like of 
+
+- http://olympus.thm/~webmaster/admin/img/vimeo.png
+- http://olympus.thm/~webmaster/admin/css/sb-admin.css
+- http://olympus.thm/~webmaster/admin/index.php
+- http://olympus.thm/~webmaster/admin/index.php
+- http://olympus.thm/~webmaster/admin/profile.php?section=
+- http://olympus.thm/~webmaster/admin/includes/logout.php
+- http://olympus.thm/~webmaster/admin/index.php
+- http://olympus.thm/~webmaster/admin/posts.php
+- http://olympus.thm/~webmaster/admin/posts.php?source=add_post
+- http://olympus.thm/~webmaster/admin/categories.php
+- http://olympus.thm/~webmaster/admin/comment.php
+- http://olympus.thm/~webmaster/admin/users.php
+- http://olympus.thm/~webmaster/admin/users.php?source=add_user
+- http://olympus.thm/~webmaster/admin/profile.php?section=
+- http://olympus.thm/~webmaster/admin/comment.php
+- http://olympus.thm/~webmaster/admin/posts.php
+- http://olympus.thm/~webmaster/admin/users.php
+- http://olympus.thm/~webmaster/admin/categories.php

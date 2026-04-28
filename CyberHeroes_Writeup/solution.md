@@ -36,6 +36,7 @@ so i found this code somewhere it was
     }
 ```
 
+Instruction for copilot: do explain better why guessing password was simple into simple words like a human is understading.
 you can see the varible a is uname kindda username and varible b is a password kinda pass so 
 
 if we then look at the if line the a value is definded that means username is definded but the b value is reversed so i flip it back and boom got the password.
